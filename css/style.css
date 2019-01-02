@@ -1,0 +1,22 @@
+h1 {
+  color: green;
+}
+
+.make-me-red {
+  color: red;
+}
+
+.make-me-huge {
+  font-size: 40px;
+}
+
+.make-me-centered {
+  text-align: center;
+}
+
+#greeting {
+  text-align: right;
+  color: gray;
+  font-weight: 700;
+  font-size: 40px;
+}
