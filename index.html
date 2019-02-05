@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
  <head>
-    <link rel="stylesheet" href="css/style.css"></style>
-
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+   <!--CSS Links-->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/scrollani.css">
+
   </head>
 
  <body>
-        <!--Navbar begins-->
-    <div class="navbar navbar-inverse navbar-static-top ">
+
+    <!--Navbar begins-->
+<!--     <div class="navbar navbar-default navbar-static-top ">
       <div class="container">
         <div class="navbar-header">
         <a href="#" class="navbar-brand">Website Title</a>
@@ -32,8 +39,62 @@
           </ul>
         </div>
       </div>
+    </div> -->
+
+    <div class="navbar2 hidden-xs">
+      <div align="center">
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="test.html"><li>Portfolio</li></a>
+          <a href="#"><li>About Me</li></a>
+          <a href="#"><li>This Site</li></a>
+          <a href="img/shengchen_resume.pdf"><li>CV</li></a>
+          <a href="#" id="spcl"><li>Contact</li></a>
+        </ul>
+      </div>
     </div>
     <!--Navbar ends-->
+
+    <!-- greeting -->
+    <div id="greeting" class="greeting boxShadow" style="z-index: -1;">
+
+      <video playsinline="" autoplay="autoplay" muted="muted" loop="" id="bgvid">
+        <source src="video/intro.mp4" type="video/mp4">
+      </video>
+
+      <div class="text-center fadeMe" style="display: block;">
+        <h2 class="articleTitle textShadow">Shengchen Liu</span></h2>
+        <p class="articleSubTitle textShadow">Self-motivated engineer<br>passionate about AI</p>
+      </div>
+
+      <div class="scroll-pos fadeMe" style="display: block;"> 
+          <span class="scroll-btn">
+            <div style="font-size: 20px">scroll</div>
+            <a> 
+              <span class="mouse">
+                <span></span>
+              </span>
+            </a>
+            <div style="font-size: 20px">down!</div>
+          </span>
+      </div>
+    </div>
+
+    <!-- greeting ends -->
+
+    <!-- slide2 -->
+    <div class="slide2 boxShadow" data-type="background" data-speed="4" style="background-position: 50% -342px;">    
+      <div class="text-center">
+        <h3 class="articleTitle textShadow slide-top" data-plugin-options="{&quot;offset&quot;: 100, &quot;reverse&quot;: false}" style="opacity: 1; visibility: visible; position: relative; bottom: 0px;">
+          Hi there,
+        </h3>
+        <p class="articleSubTitle slide-bottom" style="padding-top: 4vw; opacity: 0; visibility: visible; position: relative; top: 50px;" data-plugin-options="{&quot;offset&quot;: -100}">
+          <mark>I like to build things and learn new skills!</mark>
+        </p>
+      </div>
+    </div>
+    <!-- slide2 end -->
+
 
     <!-- jumbotron -->
     <div class="jumbotron">
@@ -109,6 +170,41 @@
     </div>
 <!-- panel ends -->
 
+<!-- animations -->
+    <div class="row">
+        <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-body">
+             <h3>Body Title</h3>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="img/resume.p" role="button">View details &raquo;</a></p>
+
+            </div>
+         </div>
+       </div>
+
+        <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-body">
+             <h3>Body Title</h3>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+           </div>
+         </div>
+       </div>
+
+        <div class="col-md-4">
+         <div class="panel panel-default">
+            <div class="panel-body">
+             <h3>Body Title</h3>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+           </div>
+         </div>
+       </div>
+     </div> 
 
     <h1>Hey World!</h1>
     <p class="make-me-huge">Large text</p>
@@ -138,6 +234,8 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <!-- Latest compiled and minified JavaScript for Bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
- </body>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/animation.js"></script>
+
 </html>
 
