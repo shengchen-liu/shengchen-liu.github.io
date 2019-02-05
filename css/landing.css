@@ -72,8 +72,8 @@ mark {
   /*width: 100%;*/
   height: auto;
   top: -1.5em;
-  background: url(../img/milling.jpg) 50% 0 no-repeat;
-  background-size: cover;
+  background: url(../img/about_me.jpg) 50% 0 no-repeat;
+  background-size: auto;
   z-index: 2;
 }
 
