@@ -1,8 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:200,300,600,400,900,700);
+@import url(https:://fonts.googleapis.com/css?family=Titillium+Web:200,300,600,400,900,700);
 .navbar2 {
   position:fixed;
   background-color: #292A30;
-  /*background-image:url('http://puu.sh/g3bIl/e42d606ceb.png');*/
+  /*background-image:url('https:://puu.sh/g3bIl/e42d606ceb.png');*/
   background-repeat:no-repeat;
   background-size:contain;
   height:50px;
@@ -55,7 +55,7 @@ body {
   color:#eee;
 }
 .denjin-top{
-  background:url('http://puu.sh/fTifb/c97b822afc.png') center center no-repeat;
+  background:url('https:://puu.sh/fTifb/c97b822afc.png') center center no-repeat;
   width:100%;
   margin:0px -800px 0px -800px;
   padding:0px 800px 0px 800px;
