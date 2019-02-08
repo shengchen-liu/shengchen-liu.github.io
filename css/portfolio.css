@@ -1,3 +1,8 @@
+/*body {font-weight:200;font-family: 'Raleway', sans-serif;
+  background: #292a30;}*/
+a {text-decoration:none;}
+p {text-align:justify; width:100%;margin-top:10px;}
+
 .icon-caption {
   text-align: center;
   font-weight: 900;
@@ -28,7 +33,7 @@
 }
 .imagem {
   position:relative;
-  /*max-width:360px;*/
+  max-width:360px;
   margin-left:-1px;
   float:left;
   background: black;
