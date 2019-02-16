@@ -61,7 +61,7 @@ mark {
   height: auto;
   top: -1.5em;
   background: url(../img/Wondering_earth.jpg) 50% 0 no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
   background-attachment: fixed;
   z-index: 2;
 }
