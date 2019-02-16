@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
-@import url(https://fonts.googleapis.com/css?family=Patua+One);
-@import url(https://fonts.googleapis.com/css?family=Armata);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Patua+One);
+@import url(http://fonts.googleapis.com/css?family=Armata);
 @import url("../fonts/Archive/stylesheet.css");
 
 html {
@@ -49,8 +49,8 @@ mark {
   width: 100%;
   height: 20vw;
   top: -1.5em;
-  background: url(../img/Wondering_earth.jpg) 50% 0 no-repeat;
-  background-size: 100% auto;
+  background: url(../img/blurryboston.jpg) 50% 0 no-repeat;
+  background-size: 135% auto;
   z-index: 2;
 }
 
@@ -60,7 +60,7 @@ mark {
   width: 100%;
   height: auto;
   top: -1.5em;
-  background: url(../img/Wondering_earth.jpg) 50% 0 no-repeat;
+  background: url(../img/middle.jpg) 50% 0 no-repeat;
   background-size: cover;
   background-attachment: fixed;
   z-index: 2;
@@ -72,22 +72,36 @@ mark {
   /*width: 100%;*/
   height: auto;
   top: -1.5em;
-  background: url(../img/about_me.jpg) 50% 0 no-repeat;
-  background-size: auto;
+  background: url(../img/first.jpg) 50% 0 no-repeat;
+  background-size: cover;
   z-index: 2;
 }
 
+
 .slide5 {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 110%;
+  height: auto;
+  bottom: : 0em;
+  background: url(../img/last.jpg) 50% 0 no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 2;
+}
+
+/*.slide5 {
   position: fixed;
   margin: 0 auto;
   width: 100%;
   height: 110%;
   top: -1.5em;
-  /*background: url(../img/last.jpg) 50% 0 no-repeat;*/
+  background: url(../img/last.jpg) 50% 0 no-repeat;
   background-size: cover;
   background-attachment: fixed;
   z-index: 0;
-}
+}*/
 
 video#bgvid { 
   position: fixed;
@@ -245,19 +259,4 @@ video#bgvid {
 .hover-container:hover .icon-descrip {
   margin-left:0%;
   opacity:1;
-}
-
-
-
-.bg {
-  /* The image used */
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
-
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
