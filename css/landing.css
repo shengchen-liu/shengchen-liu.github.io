@@ -61,7 +61,7 @@ mark {
   height: auto;
   top: -1.5em;
   background: url(../img/Wondering_earth.jpg) 50% 0 no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   background-attachment: fixed;
   z-index: 2;
 }
@@ -245,4 +245,19 @@ video#bgvid {
 .hover-container:hover .icon-descrip {
   margin-left:0%;
   opacity:1;
+}
+
+
+
+.bg {
+  /* The image used */
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
