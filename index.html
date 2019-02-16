@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html >
-  <head>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
 
     <title>Shengchen Liu</title>
@@ -25,7 +25,7 @@
   <body>
      <!--Navbar begins-->
      <!-- Navbar for desktop and iPad -->
-     <div class="navbar2 hidden-xs">
+    <div class="navbar2 hidden-xs">
       <div align="center">
         <ul>
           <a href="index.html"><li>Home</li></a>
@@ -68,18 +68,18 @@
     </div>
     <!--Navbar ends-->
 
-    <div id="greeting" class="greeting boxShadow">
+    <div id="kakurenbou" class="greeting boxShadow" style="z-index: -1;">
 
-      <video playsinline autoplay muted loop id="bgvid">
+      <video playsinline="" autoplay="autoplay" muted="muted" loop="" id="bgvid">
         <source src="img/intro_1_low_res.mp4" type="video/mp4">
       </video>
 
-      <div class="text-center fadeMe">
+      <div class="text-center fadeMe" style="display: block;">
         <h2 class="articleTitle textShadow">Shengchen <span class="dark">Liu</span></h2>
         <p class="articleSubTitle textShadow">Self-motivated engineer<br>passionate about AI</p>
       </div>
 
-      <div class="scroll-pos fadeMe"> 
+      <div class="scroll-pos fadeMe" style="display: block;"> 
           <span class="scroll-btn">
             <div style="font-size: 20px">scroll</div>
             <a> 
@@ -110,74 +110,82 @@
         </h2>
         <!-- ROW ONE *****************************************************************************-->
         <!-- *************************************************************************************-->
-        <h3 class="articleSubTitle textShadow" style="padding-top: 2vw; padding-bottom: 2vw">I research computer vision:</h3>
-        <!-- Quadcopter, Water Bunny, Robot Arms -->
+        <h3 class="articleSubTitle textShadow" style="padding-top: 2vw; padding-bottom: 2vw">I research machine learing:</h3>
+        <!-- Quadcopter, Advanced lane finding, Robot Arms -->
         <div class="container">
           <div class="row">
-
-            <div class="visible-lg">
               
+            <!-- large -->
+            <div class="visible-lg">
+        
               <div class="col-lg-4">
                 <div class="hover-container" style="background: black;">
-                  <a href="portfolio/maskrcnn.html">
-                      <img src="img/portfolio_icons/maskrcnn.jpg" width="100%">
-                    <p class="icon-descrip">Automated Artificial Dataset Generation for Mask R-CNN</p>
+                  <a href="portfolio/mavic_pro.html">
+                    <img src="img/mavic/Mavic_Top.jpg" width="100%">
+                    <p class="icon-descrip">3D printed Mavic Pro</p>
                   </a>
                 </div>
               </div>
+
               <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/person_descrip.html">
-                    <img src="img/portfolio_icons/robocup_icon.jpg" width="100%">
-                    <p class="icon-descrip">Describing People using Deep Learning</p>
+                <div class="hover-container" style="background: black;">
+                  <a href="portfolio/advanced_lane_finding.html">
+                    <img src="img/advanced_lane_finding/CarND-Advaced-LaneLines-P2.gif" width="100%">
+                    <p class="icon-descrip">Used Python and OpenCV to detect lanes from video</p>
                   </a>
                 </div>
               </div>
+
               <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/yolov2.html">
-                      <img src="img/portfolio_icons/yolov2.PNG" width="100%">
-                    <p class="icon-descrip">Automated Artificial Dataset Generation for YOLOv2</p>
+                <div class="hover-container" style="background: black;">
+                  <a href="https://github.com/shengchen-liu/CarND_vehicle_Detection">
+                    <img src="img/car_detection/car_detection.gif" width="100%">
+                    <p class="icon-descrip">Car Detection using CNN!</p>
                   </a>
                 </div>
               </div>
 
             </div>
 
+            <!-- medium -->
             <div class="visible-md visible-sm">
               
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/maskrcnn.html">
-                      <img src="img/portfolio_icons/maskrcnn.jpg" width="100%">
-                    <p class="icon-descrip">Automated Supervised Training for YOLOv2 Transfer Learning</p>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/person_descrip.html">
-                    <img src="img/portfolio_icons/robocup_icon.jpg" width="100%">
-                    <p class="icon-descrip">Describing People using Deep Learning</p>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="visible-xs">
-              
-              <div class="col-xs-12">
+              <div class="col-lg-6">
                 <center>
                   <div class="hover-container" style="background: black;">
-                    <a href="portfolio/maskrcnn.html">
-                      <img src="img/portfolio_icons/maskrcnn.jpg" width="100%">
-                      <p class="icon-descrip">Automated Supervised Training for YOLOv2 Transfer Learning</p>
+                    <a href="portfolio/mavic_pro.html">
+                      <img src="img/mavic/Mavic_Top.jpg" width="100%">
+                      <p class="icon-descrip">3D printed Mavic Pro</p>
                     </a>
                   </div>
                 </center>
               </div>
 
+              <div class="col-lg-6">
+                <center>
+                  <div class="hover-container" style="background: black;">
+                    <a href="portfolio/advanced_lane_finding.html">
+                      <img src="img/advanced_lane_finding/CarND-Advaced-LaneLines-P2.gif" width="100%">
+                      <p class="icon-descrip">Used Python and OpenCV to detect lanes from video</p>
+                    </a>
+                  </div>
+                </center>
+              </div>
+
+            </div>
+
+            <!-- for mobile phones -->
+            <div class="visible-xs">
+              <center>
+                <div class="col-lg-12">
+                  <div class="hover-container" style="background: black;">
+                    <a href="portfolio/advanced_lane_finding.html">
+                      <img src="img/advanced_lane_finding/CarND-Advaced-LaneLines-P2.gif" width="100%">
+                      <p class="icon-descrip">Used Python and OpenCV to detect lanes from video</p>
+                    </a>
+                  </div>
+                </div>
+              </center>
             </div>
 
           </div>
@@ -193,26 +201,28 @@
             <div class="visible-lg">
               
               <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/waterbunny.html">
-                      <img src="img/portfolio_icons/waterbunny.jpg" width="100%">
-                    <p class="icon-descrip">Autonomous plant watering robot with closed control loops</p>
+                <div class="hover-container" style="background: black;">
+                  <a href="portfolio/behavioral_cloning.html">
+                    <img src="img/behavioral/CarND_Behavioral_Clone_epoch38.gif" width="100%">
+                    <p class="icon-descrip">Behavioral Clone for Self-Driving Car</p>
                   </a>
                 </div>
               </div>
+
               <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/lightswitch2.html">
-                    <img src="img/portfolio_icons/lightswitch2.jpg" width="100%">
-                    <p class="icon-descrip">Lazy light switcher w/motion detection and IR receiver</p>
+                <div class="hover-container" style="background: black;">
+                  <a href="portfolio/lunar_lander.html">
+                    <img src="img/lunar_lander/lunar_lander.gif" width="100%">
+                    <p class="icon-descrip">Reinforcement Learning Agent for Lunar Lander!</p>
                   </a>
                 </div>
               </div>
+
               <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/website.html">
-                    <img src="img/website.jpg" width="100%">
-                    <p class="icon-descrip">Learned<br>HTML/CSS/JS to build this site from scratch</p>
+                <div class="hover-container" style="background: black;">
+                  <a href="https://github.com/shengchen-liu/yt8m">
+                    <img src="img/yt8m/yt8m.png" width="100%">
+                    <p class="icon-descrip">Youtube Video Classification!</p>
                   </a>
                 </div>
               </div>
@@ -221,21 +231,26 @@
 
             <div class="visible-md visible-sm">
               
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/3Dprinter.html">
-                    <img src="img/portfolio_icons/3Dprinter.jpg" width="100%">
-                    <p class="icon-descrip">Built a personal <br>3D printer <br>for only $200</p>
-                  </a>
-                </div>
+              <div class="col-lg-6">
+                <center>
+                  <div class="hover-container" style="background: black;">
+                    <a href="portfolio/behavioral_cloning.html">
+                      <img src="img/behavioral/CarND_Behavioral_Clone_epoch38.gif" width="100%">
+                      <p class="icon-descrip">Behavioral Clone for Self-Driving Car</p>
+                    </a>
+                  </div>
+                </center>
               </div>
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/lightswitch.html">
-                    <img src="img/portfolio_icons/lightswitch.jpg" width="100%">
-                    <p class="icon-descrip">Turns off room light with claps or any IR remote</p>
-                  </a>
-                </div>
+
+              <div class="col-lg-6">
+                <center>
+                  <div class="hover-container" style="background: black;">
+                    <a href="portfolio/lunar_lander.html">
+                      <img src="img/lunar_lander/lunar_lander.gif" width="100%">
+                      <p class="icon-descrip">Reinforcement Learning Agent for Lunar Lander!</p>
+                    </a>
+                  </div>
+                </center>
               </div>
 
             </div>
@@ -244,10 +259,10 @@
               
               <div class="col-xs-12">
                 <center>
-                  <div class="hover-container" style="background: black;" >
-                    <a href="portfolio/3Dprinter.html">
-                      <img src="img/portfolio_icons/3Dprinter.jpg" width="100%">
-                      <p class="icon-descrip">Built a personal 3D printer for $200</p>
+                  <div class="hover-container" style="background: black;">
+                    <a href="portfolio/lunar_lander.html">
+                      <img src="img/lunar_lander/lunar_lander.gif" width="100%">
+                      <p class="icon-descrip">Reinforcement Learning Agent for Lunar Lander!</p>
                     </a>
                   </div>
                 </center>
@@ -257,8 +272,9 @@
 
           </div>
         </div>
-        
     </section>
+
+
     <section id="mobairu" class="slide4" data-type="background" data-speed="4">    
       <div class="text-center">
         <h3 class="articleTitle textShadow slide-top" data-plugin-options='{"offset": 100, "reverse": false}' style="padding-bottom: 3%">
@@ -273,8 +289,8 @@
             <div class="col-xs-6">
               <div class="highlight slide-right">
                 <div class="articleSubTitle about-text">
-                  - Scientist II at Charles River Analytics<br>
-                  - MS in Computer Vision and Machine Learning<br>
+                  - PhD in Mechanical and Industrial Engineering<br>
+                  - MS in Computer Science<br>
                 </div>
               </div>
             </div>
@@ -284,10 +300,10 @@
       </div>
     </section>
 
-    <!-- Bottom section -->
+
     <section class="slide5">
-      <img src="./img/last.jpg" id="bgimg" align="right">
-      <div style="margin-top: 0vh">
+      <img src="img/neural_2.jpg" id="bgimg" align="right">
+      <div style="margin-top: 30vh">
         <h3 class="articleTitle textShadow">
           More <span class="dark">information:</span>
         </h3>
@@ -325,10 +341,11 @@
     </section>
     <section style="height: 100%; z-index:-1000;" id="trigger"></section>
     
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="js/jquery.fadethis.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/landing.js"></script>
-    <script src="js/bootstrap.js"></script>
-  </body>
-</html>
+    <script src="Naoki%20Yokoyama_files/jquery_003.js"></script>
+    <script src="Naoki%20Yokoyama_files/jquery.js"></script>
+    <script src="Naoki%20Yokoyama_files/jquery_002.js"></script>
+    <script src="Naoki%20Yokoyama_files/landing.js"></script>
+    <script src="Naoki%20Yokoyama_files/bootstrap.js"></script>
+  
+
+</body></html>
