@@ -1,0 +1,5 @@
+Q3_a: use no more than 50 words to discuss which feature combination is better at separating the classes and why.
+Feature 8 (Budget) vs. Features 6 ( Rating) is a better combination.  Because they are clearly splitted at around rating=6.  Most of bad ratings have a rating<6.0; most of good ratings have a rating >6.0.
+
+Q3.c: explain when we may want to use square root scale and log scale in charts.
+Square root scale and log scale are commonly used to skewness towards large values; i.e., cases in which one or a few points are much larger than the bulk of the data. And also they can show percent change or multiplicative factors.

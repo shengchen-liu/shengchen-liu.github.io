@@ -1,0 +1,20 @@
+1.Ease to develop for developers
+	Tableau: easy to create charts, no coding required.
+    D3: coding is difficult for beginners.  Requires a lot of coding for buidling from scratch.
+    Plotly: requires knowledgye of Python, one of my favorite toolbox in Python because the built-in methods are easy to understand.
+2.Ease to maintain the visualization for developers (e.g., difficulty of the maintenance of the product as the requirements change, the data changes,  the hosting platform changes, etc.)
+	Tableau: difficult to maintain.  If the data changes, you need to manually select the new data on Tableau.
+    D3: easy to maintain.  Even if data is changed, you can simply modify a few lines in code to read the new data.
+    Plotly: easy to maintain.  Same as D3, you only need to modify a few lines in code to read the new data.
+3.Usability of visualization developed for end users
+	Tableau: good.  Very easy to operate by dragging and clicking buttons.
+    D3: more control and flexibility.  Can customize figures according to specific requirements.
+    Plotly: nice-looking but less flexibility compared with D3. 
+4.Scalability of visualization to “large” datasets
+	Tableau: not recommended used for large datasets.  The response is really slow for handling large datasets, comsums large resources.
+    D3: good for scalability. D3 provides functions such as 'promises' that are good for reading large and multiple data.  Combined with other libraries, D3 is good for large datasets.
+    Plotly: not recommended for large datasets.  Plotly consumes too much resources for large dataset, it is majorly used for prototyping.
+5.System requirements to run the visualization (e.g., browsers, OS, software licensing) for end users
+	Tableau: Bad. Only supports Windows and Mac.  No support for Linux.  Need to purchase licenses.
+    D3: Good.  Suppoorts almost all kinds of browsers, no need to purchase licenses.
+    Plotly: Good.  As long as Python is properly installed, you can use Plotly.

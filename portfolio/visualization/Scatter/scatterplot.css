@@ -1,0 +1,15 @@
+div.main {
+        margin: auto;
+        width: 600px;
+    }
+    .main h2 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 30px;
+    }
+    .pagebreak { page-break-before: always; }
+    .axis path,
+    .axis line {
+      fill: none; 
+      stroke: #000;
+    }
