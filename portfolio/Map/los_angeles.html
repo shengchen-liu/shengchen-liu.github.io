@@ -1,0 +1,123 @@
+ <html>
+ <head>
+ 	<meta charset="utf-8"/>
+	<title>Shengchen Liu</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS Links-->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../css/portfolio_main.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/landing.css">
+    <link rel="stylesheet" href="../../css/scrollani.css">
+    <!--Scripts-->
+    <script type="text/javascript" src="../../js/analytics.js"></script>
+    <script src="https://s.codepen.io/assets/libs/modernizr.js" type="../../text/javascript"></script>
+    <script type="text/javascript" src="../../js/jquery-2.1.3.min.js"></script>
+
+
+	<script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+	integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+	crossorigin=""/>
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+	integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+	crossorigin=""></script>
+	<link rel="stylesheet" href="los_angeles.css">
+
+	<!-- Also, we need to tell the mobile browser to disable unwanted scaling of the page and set it to its actual size by placing the following line in the head section or our HTML page: -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- clustering -->
+	<link rel="stylesheet" href="Leaflet.markercluster-1.4.1/dist/MarkerCluster.css" />
+	<link rel="stylesheet" href="Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css" />
+	<script src="Leaflet.markercluster-1.4.1/dist/leaflet.markercluster-src.js"></script>
+
+	<!-- jqury -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ </head>
+
+ <body>
+ 	<!--Navbar begins-->
+    <!-- Navbar for desktop and iPad -->
+    <div class="navbar2 hidden-xs">
+      <div align="center">
+        <ul>
+            <a href="../../index.html"><li>Home</li></a>
+            <a href="../../portfolio.html"><li>Portfolio</li></a>
+            <a href="../../about_me.html"><li>About Me</li></a>
+            <a href="../../img/shengchen_resume.pdf"><li>CV</li></a>
+            <a href="../../contact.html" id="spcl"><li>Contact</li></a>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Navbar for mobile phone -->
+    <div class="navbar navbar-inverse navbar-static-top visible-xs" style="margin-top:0">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand">Shengchen Liu</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button></div>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../portfolio.html">Portfolio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../../about_me.html">The Author</a></li>
+                <li><a href="#">This Website</a></li>
+              </ul>
+            </li>
+            <li><a href="../../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navbar ends-->
+
+
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="page-header">
+              <center>
+                <h3>Interactive map using Leaflet.js</h3>
+              </center>
+            </div>
+            
+            <!-- image -->
+            <div id="Container">
+              <p class="fontsize">
+                Predict and visualize house price in Los Angeles
+              </p>
+            </div>
+            
+            <div id="Container">
+	            <center>
+				   <div id="map_1"></div>
+	            </center>
+	        </div>
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 	<!-- universal format parser for Leaflet & Mapbox.js -->
+	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+ 	<script src="los_angeles_old.js"></script>
+ </body>
+ </html>
