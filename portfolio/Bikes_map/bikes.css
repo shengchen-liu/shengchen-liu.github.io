@@ -1,0 +1,10 @@
+/*#map_1 {width: 900px; height: 500px;}*/
+
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map_1 {
+    height: 80vh;
+    width: 80vw;
+}
