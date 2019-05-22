@@ -7,64 +7,21 @@ var satellite = L.tileLayer(mbUrl, {id: 'mapbox.satellite', attribution: mbAttr}
 
 // jump_bikes layer
 var jump_bikes = L.layerGroup();
+var lime_bikes = L.layerGroup();
+var spin_bikes = L.layerGroup();
 
 // var mymap = L.map('map_1').setView([34.0537767, -118.2428987], 15);
 
 var mymap = L.map('map_1', {
 	center: [34.0537767, -118.2428987],
 	zoom: 15,
-	layers: [streets, jump_bikes]
+	layers: [streets, jump_bikes, lime_bikes, spin_bikes]
 });
 
 var baseLayers = {
 		"Satellite": satellite,
 		"Streets": streets
 	};
-
-//  cluster
-var markers = new L.MarkerClusterGroup();
-var markersList = [];
-
-// read data from csv
-url = './data/visualization.csv'
-
-function read_from_csv(url){
- ///this one way of declaring array in javascript
-	d3.csv(url, function(csvdata) {
-		geo_data = csvdata.map(function (d) {
-	            return {
-	                parcelid: d.parcelid,
-	                latitude: +d.lat,
-	                longitude: +d.lng}
-	            })
-
-
-	// console.log(geo_data)
-		load_points(geo_data, jump_bikes, 100)
-	})
-	// console.log(window.geo_data)
-}
-
-function load_points(data, layer, limit){
-    L.marker([34.0537767, -118.2428987]).bindPopup('<b>Los Angeles City Hall!</b><br>I am a popup.').addTo(layer);
-    total_points = data.length
-    // console.log(total_points)
-
-    for(var i = 0; i<total_points;i++){
-        if (i > limit){
-            break;
-        }
-        latitude = data[i].latitude;
-        longitude = data[i].longitude;
-        // L.marker([latitude, longitude]).addTo(layer)
-        var m = new L.Marker([latitude, longitude]);
-        markersList.push(m);
-        markers.addLayer(m);
-
-        // console.log(i)
-        }
-
-}
 
 // Dealing with events
 var popup = L.popup();
@@ -91,9 +48,20 @@ function onLocationError(e) {
     alert(e.message);
 }
 
+var jumpIcon = new L.Icon({
+                    iconSize: [27, 27],
+                    iconAnchor: [13, 27],
+                    popupAnchor:  [1, -24],
+                    iconUrl: 'icon/Jump.png'
+            });
+
+// JumpBike
 $.getJSON("data/atx_jumpbikes_free_bike_status_1558454068.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
     var geoJsonLayer = L.geoJson(data ,{
+        pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: jumpIcon});
+            },
         onEachFeature: function(feature, featureLayer) {
             featureLayer.bindPopup('Company:' + feature.company + '<br>' +
                                     'Bike_id:' + feature.properties.bike_id + '<br>' + 
@@ -104,26 +72,97 @@ $.getJSON("data/atx_jumpbikes_free_bike_status_1558454068.geojson",function(data
                                     'jump_vehicle_type: ' + feature.properties.jump_vehicle_type + '<br>');
         }
     });
+
+
+    //  cluster
+    var markers = new L.MarkerClusterGroup();
+    var markersList = [];
     markers.addLayer(geoJsonLayer);
+    jump_bikes.addLayer(markers);
+    mymap.addLayer(markers);
+    mymap.fitBounds(geoJsonLayer.getBounds());
+});
+
+// Lime
+// http://bl.ocks.org/ThomasG77/61fa02b35abf4b971390
+var limeIcon = new L.Icon({
+                    iconSize: [27, 27],
+                    iconAnchor: [13, 27],
+                    popupAnchor:  [1, -24],
+                    iconUrl: 'icon/Lime.png'
+            });
+
+$.getJSON("data/washington_dc_Lime_free_bike_status_1558463148.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    var geoJsonLayer = L.geoJson(data ,{
+        pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: limeIcon});
+            },
+        onEachFeature: function(feature, featureLayer) {
+            featureLayer.bindPopup(
+                                    'Last Updated: '+ new Date(parseInt(feature.last_updated, 10) * 1000) + '<br>' +
+                                    'Company:' + feature.company + '<br>' +
+                                    'Bike_id:' + feature.properties.bike_id + '<br>' + 
+                                    'is_reserved:' + feature.properties.is_reserved + '<br>' + 
+                                    'is_disabled:' + feature.properties.is_disabled + '<br>' +
+                                    'vehicle_type: ' + feature.properties.vehicle_type + '<br>');
+
+        }
+    });
+
+    //  cluster
+    var markers = new L.MarkerClusterGroup();
+    var markersList = [];
+    markers.addLayer(geoJsonLayer);
+    lime_bikes.addLayer(markers);
     mymap.addLayer(markers);
     mymap.fitBounds(geoJsonLayer.getBounds());
 });
 
 
-// markers.on('click', function (a) {
-//     alert('marker ' + a.layer);
-// });
-// read_from_csv(url)
-// mymap.addLayer(markers);
-// // console.log(geo_data)
+// Spin
+var spinIcon = new L.Icon({
+                    iconSize: [27, 27],
+                    iconAnchor: [13, 27],
+                    popupAnchor:  [1, -24],
+                    iconUrl: 'icon/Spin.jpg'
+            });
 
+$.getJSON("data/washington_dc_Spin_free_bike_status_1558484669.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    var geoJsonLayer = L.geoJson(data ,{
+        pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {icon: spinIcon});
+            },
 
+        onEachFeature: function(feature, featureLayer) {
+            featureLayer.bindPopup(
+                                    'Last Updated: '+ new Date(parseInt(feature.last_updated, 10) * 1000) + '<br>' +
+                                    'Company:' + feature.company + '<br>' +
+                                    'Bike_id:' + feature.properties.bike_id + '<br>' + 
+                                    'is_reserved:' + feature.properties.is_reserved + '<br>' + 
+                                    'is_disabled:' + feature.properties.is_disabled + '<br>' +
+                                    'vehicle_type: ' + feature.properties.vehicle_type + '<br>');
+
+        }
+    });
+
+    //  cluster
+    var markers = new L.MarkerClusterGroup();
+    var markersList = [];
+    markers.addLayer(geoJsonLayer);
+    spin_bikes.addLayer(markers);
+    mymap.addLayer(markers);
+    mymap.fitBounds(geoJsonLayer.getBounds());
+});
 
 
 
 
 var overlays = {
-	"Jump Bike": jump_bikes
+	"Jump Bike": jump_bikes,
+    "Lime Bike": lime_bikes,
+    "Spin Bike": spin_bikes
 };
 
 L.control.layers(baseLayers, overlays).addTo(mymap);
