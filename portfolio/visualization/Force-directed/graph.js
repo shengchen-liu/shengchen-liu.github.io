@@ -262,8 +262,8 @@ links.forEach(function(link) {
     link.target["degree"]+=1;
 });
 
-var width = 1200,
-    height = 700;
+var width = document.getElementById('chartArea').clientWidth;
+    height =  500;
 
 var force = d3.forceSimulation()
     .nodes(d3.values(nodes))
@@ -275,9 +275,10 @@ var force = d3.forceSimulation()
     .alphaTarget(1)
     .on("tick", tick);
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+var svg = d3.select("#chartArea").append("svg") 
+            .attr("width", width)
+            .attr("height", height);
+
 
 // add the links and the arrows
 
@@ -413,3 +414,15 @@ function dragended(d) {
   }
   // console.log('here d.fixed: '+ d.fixed)
 };
+
+//We will build a basic function to handle window resizing.
+function resize() {
+    width = document.getElementById('chartArea').clientWidth;
+    height = 500;
+    d3.select('#chartArea svg')
+      .attr('width', width)
+      .attr('height', height);
+}
+
+window.onresize = resize;
+//Call our resize function if the window size is changed.
