@@ -1536,11 +1536,11 @@ section {
     left: 0px;
   }
   .timeline>li:nth-child(even) .timeline-image {
-    left: 0;
+    left: 0px;
     margin-left: 0px;
   }
   .timeline>li:nth-child(odd) .timeline-image {
-    left: 690px;
+    left: 0px;
     margin-left: 0px;
   }
   .timeline > li:nth-child(even) .timeline-panel {
@@ -1610,7 +1610,7 @@ section {
     margin-bottom:0px;
   }
   .timeline>li:nth-child(even) .timeline-image {
-    left: 0;
+    left: 0px;
     margin-left: 0;
   }
   .timeline>li:nth-child(odd) .timeline-image {
