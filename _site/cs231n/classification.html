@@ -1,0 +1,514 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Image Classification · GitBook</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="">
+    <meta name="generator" content="GitBook 3.2.3">
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+
+
+    <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+
+
+
+    <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+
+
+
+    <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+</head>
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top  d-flex justify-content-center align-items-center ">
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#experience">My Experience</a></li>
+            <li><a href="../index.html#portfolio">Portfolio</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="../index.html#resume">Resume</a></li>
+
+        </ul>
+    </nav><!-- .nav-menu -->
+
+</header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Image Classfication</h2>
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li>Image Classfication</li>
+        </ol>
+    </div>
+
+</div>
+</section><!-- End Breadcrumbs -->
+
+</main><!-- End #main -->
+
+
+<div class="book">
+    <div class="book-summary">
+
+
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+
+
+        <nav role="navigation">
+
+
+
+            <ul class="summary">
+
+
+
+
+
+
+
+
+
+                <li class="chapter " data-level="1.1" data-path="./">
+
+                    <a href="./">
+
+
+                        readme
+
+                    </a>
+
+
+
+                </li>
+
+                <li class="chapter active" data-level="1.2" data-path="classification.html">
+
+                    <a href="classification.html">
+
+
+                        Image Classification
+
+                    </a>
+
+
+
+                </li>
+
+
+
+
+                <li class="divider"></li>
+
+                <li>
+                    <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                        Published with GitBook
+                    </a>
+                </li>
+            </ul>
+
+
+        </nav>
+
+
+    </div>
+
+    <div class="book-body">
+
+        <div class="body-inner">
+
+
+
+            <div class="book-header" role="navigation">
+
+
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a href="." >Image Classification</a>
+                </h1>
+            </div>
+
+
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+
+                    <div id="book-search-results">
+                        <div class="search-noresults">
+
+                            <section class="normal markdown-section">
+
+                                <p> Table of Contents:</p>
+                                <ul>
+                                    <li><a href="#image-classification">Image Classification</a><ul>
+                                        <li><a href="#nearest-neighbor-classifier">Nearest Neighbor Classifier</a></li>
+                                        <li><a href="#k---nearest-neighbor-classifier">k - Nearest Neighbor Classifier</a></li>
+                                        <li><a href="#validation-sets-for-hyperparameter-tuning">Validation sets for Hyperparameter tuning</a></li>
+                                        <li><a href="#summary">Summary</a></li>
+                                        <li><a href="#summary-applying-knn-in-practice">Summary: Applying kNN in practice</a><ul>
+                                            <li><a href="#further-reading">Further Reading</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p><a name="intro"></a></p>
+                        <h1 id="image-classification">Image Classification</h1>
+                        <p><strong>Motivation</strong>. Assigning an input image one label from a fixed set of categories. This is one of the core problems in Computer Vision.</p>
+                        <p><strong>Challenges</strong>. </p>
+                        <ul>
+                            <li><strong>Viewpoint variation</strong>. A single instance of an object can be oriented in many ways with respect to the camera.</li>
+                            <li><strong>Scale variation</strong>. Visual classes often exhibit variation in their size (size in the real world, not only in terms of their extent in the image).</li>
+                            <li><strong>Deformation</strong>. Many objects of interest are not rigid bodies and can be deformed in extreme ways.</li>
+                            <li><strong>Occlusion</strong>. The objects of interest can be occluded. Sometimes only a small portion of an object (as little as few pixels) could be visible.</li>
+                            <li><strong>Illumination conditions</strong>. The effects of illumination are drastic on the pixel level.</li>
+                            <li><strong>Background clutter</strong>. The objects of interest may <em>blend</em> into their environment, making them hard to identify.</li>
+                            <li><strong>Intra-class variation</strong>. The classes of interest can often be relatively broad, such as <em>chair</em>. There are many different types of these objects, each with their own appearance.</li>
+                        </ul>
+                        <p><strong>Data-driven approach</strong>. : Provide the computer with many examples of each class and then develop learning algorithms that look at these examples and learn about the visual appearance of each class. This approach is referred to as a <em>data-driven approach</em>, since it relies on first accumulating a <em>training dataset</em> of labeled images. </p>
+                        <p><strong>The image classification pipeline</strong>. </p>
+                        <ul>
+                            <li><strong>Input:</strong> Our input consists of a set of <em>N</em> images, each labeled with one of <em>K</em> different classes. We refer to this data as the <em>training set</em>.</li>
+                            <li><strong>Learning:</strong> Our task is to use the training set to learn what every one of the classes looks like. We refer to this step as <em>training a classifier</em>, or <em>learning a model</em>.</li>
+                            <li><strong>Evaluation:</strong> In the end, we evaluate the quality of the classifier by asking it to predict labels for a new set of images that it has never seen before. We will then compare the true labels of these images to the ones predicted by the classifier. Intuitively, we&apos;re hoping that a lot of the predictions match up with the true answers  (which we call the <em>ground truth</em>).</li>
+                        </ul>
+                        <p><a name="nn"></a></p>
+                        <h2 id="nearest-neighbor-classifier">Nearest Neighbor Classifier</h2>
+                        <p>As our first approach, we will develop what we call a <strong>Nearest Neighbor Classifier</strong>. This classifier has nothing to do with Convolutional Neural Networks and it is very rarely used in practice, but it will allow us to get an idea about the basic approach to an image classification problem.</p>
+                        <p>Suppose now that we are given the CIFAR-10 training set of 50,000 images (5,000 images for every one of the labels), and we wish to label the remaining 10,000. The nearest neighbor classifier will take a test image, compare it to every single one of the training images, and predict the label of the closest training image.</p>
+                        <p>Given two images and representing them as vectors $( I_1, I_2 )$ , a reasonable choice for comparing them might be the <strong>L1 distance</strong>:</p>
+                        <p><script type="math/tex; ">
+                            d_1 (I_1, I_2) = \sum_{p} \left| I^p_1 - I^p_2 \right|
+                        </script></p>
+                        <p>Where the sum is taken over all pixels. Here is the procedure visualized:</p>
+                        <div class="fig figcenter fighighlight">
+                          <img src="assets/nneg.jpeg">
+                          <div class="figcaption">An example of using pixel-wise differences to compare two images with L1 distance (for one color channel in this example). Two images are subtracted elementwise and then all differences are added up to a single number. If two images are identical the result will be zero. But if the images are very different the result will be large.    </div>
+                      </div>
+
+                      <p>Notice that as an evaluation criterion, it is common to use the <strong>accuracy</strong>, which measures the fraction of predictions that were correct. Notice that all classifiers we will build satisfy this one common API: they have a <code>train(X,y)</code> function that takes the data and the labels to learn from. Internally, the class should build some kind of model of the labels and how they can be predicted from the data. And then there is a <code>predict(X)</code> function, which takes new data and predicts the labels. Of course, we&apos;ve left out the meat of things - the actual classifier itself. Here is an implementation of a simple Nearest Neighbor classifier with the L1 distance that satisfies this template:</p>
+                      <pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+                        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NearestNeighbor</span><span class="hljs-params">(object)</span>:</span>
+                        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+                        <span class="hljs-keyword">pass</span>
+
+                        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">train</span><span class="hljs-params">(self, X, y)</span>:</span>
+                        <span class="hljs-string">&quot;&quot;&quot; X is N x D where each row is an example. Y is 1-dimension of size N &quot;&quot;&quot;</span>
+                        <span class="hljs-comment"># the nearest neighbor classifier simply remembers all the training data</span>
+                        self.Xtr = X
+                        self.ytr = y
+
+                        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict</span><span class="hljs-params">(self, X)</span>:</span>
+                        <span class="hljs-string">&quot;&quot;&quot; X is N x D where each row is an example we wish to predict label for &quot;&quot;&quot;</span>
+                        num_test = X.shape[<span class="hljs-number">0</span>]
+                        <span class="hljs-comment"># lets make sure that the output type matches the input type</span>
+                        Ypred = np.zeros(num_test, dtype = self.ytr.dtype)
+
+                        <span class="hljs-comment"># loop over all test rows</span>
+                        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(num_test):
+                        <span class="hljs-comment"># find the nearest training image to the i&apos;th test image</span>
+                        <span class="hljs-comment"># using the L1 distance (sum of absolute value differences)</span>
+                        distances = np.sum(np.abs(self.Xtr - X[i,:]), axis = <span class="hljs-number">1</span>)
+                        min_index = np.argmin(distances) <span class="hljs-comment"># get the index with smallest distance</span>
+                        Ypred[i] = self.ytr[min_index] <span class="hljs-comment"># predict the label of the nearest example</span>
+
+                        <span class="hljs-keyword">return</span> Ypred
+                    </code></pre>
+                    <h3 id="the-choice-of-distance"><strong>The choice of distance.</strong></h3>
+                    <p>There are many other ways of computing distances between vectors. Another common choice could be to instead use the <strong>L2 distance</strong>, which has the geometric interpretation of computing the Euclidean distance between two vectors. The distance takes the form:</p>
+                    <p><script type="math/tex; ">
+                        d_2 (I_1, I_2) = \sqrt{\sum_{p} \left( I^p_1 - I^p_2 \right)^2}
+                    </script></p>
+                    <p>In other words we would be computing the pixelwise difference as before, but this time we square all of them, add them up and finally take the square root. In numpy, using the code from above we would need to only replace a single line of code. The line that computes the distances:</p>
+                    <pre><code class="lang-python">distances = np.sqrt(np.sum(np.square(self.Xtr - X[i,:]), axis = <span class="hljs-number">1</span>))
+                    </code></pre>
+                    <p>Note that I included the <code>np.sqrt</code> call above, but in a practical nearest neighbor application we could leave out the square root operation because square root is a <em>monotonic function</em>. That is, it scales the absolute sizes of the distances but it preserves the ordering, so the nearest neighbors with or without it are identical. If you ran the Nearest Neighbor classifier on CIFAR-10 with this distance, you would obtain <strong>35.4%</strong> accuracy (slightly lower than our L1 distance result).</p>
+                    <p><strong>L1 vs. L2.</strong> It is interesting to consider differences between the two metrics. In particular, the L2 distance is much more unforgiving than the L1 distance when it comes to differences between two vectors. That is, the L2 distance prefers many medium disagreements to one big one. L1 and L2 distances (or equivalently the L1/L2 norms of the differences between a pair of images) are the most commonly used special cases of a <a href="https://planetmath.org/vectorpnorm" target="_blank">p-norm</a>.</p>
+                    <p><a name="knn"></a></p>
+                    <h2 id="k---nearest-neighbor-classifier">k - Nearest Neighbor Classifier</h2>
+                    <p>You may have noticed that it is strange to only use the label of the nearest image when we wish to make a prediction. Indeed, it is almost always the case that one can do better by using what&apos;s called a <strong>k-Nearest Neighbor Classifier</strong>. The idea is very simple: instead of finding the single closest image in the training set, we will find the top <strong>k</strong> closest images, and have them vote on the label of the test image. In particular, when <em>k = 1</em>, we recover the Nearest Neighbor classifier. Intuitively, higher values of <strong>k</strong> have a smoothing effect that makes the classifier more resistant to outliers:</p>
+                    <div class="fig figcenter fighighlight">
+                      <img src="assets/knn.jpeg">
+                      <div class="figcaption">An example of the difference between Nearest Neighbor and a 5-Nearest Neighbor classifier, using 2-dimensional points and 3 classes (red, blue, green). The colored regions show the <b>decision boundaries</b> induced by the classifier with an L2 distance. The white regions show points that are ambiguously classified (i.e. class votes are tied for at least two classes). Notice that in the case of a NN classifier, outlier datapoints (e.g. green point in the middle of a cloud of blue points) create small islands of likely incorrect predictions, while the 5-NN classifier smooths over these irregularities, likely leading to better <b>generalization</b> on the test data (not shown). Also note that the gray regions in the 5-NN image are caused by ties in the votes among the nearest neighbors (e.g. 2 neighbors are red, next two neighbors are blue, last neighbor is green).</div>
+                  </div>
+
+                  <p>In practice, you will almost always want to use k-Nearest Neighbor. But what value of <em>k</em> should you use? We turn to this problem next.</p>
+                  <p><a name="val"></a></p>
+                  <h3 id="validation-sets-for-hyperparameter-tuning">Validation sets for Hyperparameter tuning</h3>
+                  <p>The k-nearest neighbor classifier requires a setting for <em>k</em>. But what number works best? Additionally, we saw that there are many different distance functions we could have used: L1 norm, L2 norm, there are many other choices we didn&apos;t even consider (e.g. dot products). These choices are called <strong>hyperparameters</strong> and they come up very often in the design of many Machine Learning algorithms that learn from data. It&apos;s often not obvious what values/settings one should choose.</p>
+                  <p>You might be tempted to suggest that we should try out many different values and see what works best. That is a fine idea and that&apos;s indeed what we will do, but this must be done very carefully. In particular, <strong>we cannot use the test set for the purpose of tweaking hyperparameters</strong>. Whenever you&apos;re designing Machine Learning algorithms, you should think of the test set as a very precious resource that should ideally never be touched until one time at the very end. Otherwise, the very real danger is that you may tune your hyperparameters to work well on the test set, but if you were to deploy your model you could see a significantly reduced performance. In practice, we would say that you <strong>overfit</strong> to the test set. Another way of looking at it is that if you tune your hyperparameters on the test set, you are effectively using the test set as the training set, and therefore the performance you achieve on it will be too optimistic with respect to what you might actually observe when you deploy your model. But if you only use the test set once at end, it remains a good proxy for measuring the <strong>generalization</strong> of your classifier (we will see much more discussion surrounding generalization later in the class).</p>
+                  <blockquote>
+                    <p>Evaluate on the test set only a single time, at the very end.</p>
+                </blockquote>
+                <p>Luckily, there is a correct way of tuning the hyperparameters and it does not touch the test set at all. The idea is to split our training set in two: a slightly smaller training set, and what we call a <strong>validation set</strong>. Using CIFAR-10 as an example, we could for example use 49,000 of the training images for training, and leave 1,000 aside for validation. This validation set is essentially used as a fake test set to tune the hyper-parameters.</p>
+                <p>Here is what this might look like in the case of CIFAR-10:</p>
+                <pre><code class="lang-python"><span class="hljs-comment"># assume we have Xtr_rows, Ytr, Xte_rows, Yte as before</span>
+                    <span class="hljs-comment"># recall Xtr_rows is 50,000 x 3072 matrix</span>
+                    Xval_rows = Xtr_rows[:<span class="hljs-number">1000</span>, :] <span class="hljs-comment"># take first 1000 for validation</span>
+                    Yval = Ytr[:<span class="hljs-number">1000</span>]
+                    Xtr_rows = Xtr_rows[<span class="hljs-number">1000</span>:, :] <span class="hljs-comment"># keep last 49,000 for train</span>
+                    Ytr = Ytr[<span class="hljs-number">1000</span>:]
+
+                    <span class="hljs-comment"># find hyperparameters that work best on the validation set</span>
+                    validation_accuracies = []
+                    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">50</span>, <span class="hljs-number">100</span>]:
+
+                    <span class="hljs-comment"># use a particular value of k and evaluation on validation data</span>
+                    nn = NearestNeighbor()
+                    nn.train(Xtr_rows, Ytr)
+                    <span class="hljs-comment"># here we assume a modified NearestNeighbor class that can take a k as input</span>
+                    Yval_predict = nn.predict(Xval_rows, k = k)
+                    acc = np.mean(Yval_predict == Yval)
+                    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;accuracy: %f&apos;</span> % (acc,)
+
+                    <span class="hljs-comment"># keep track of what works on the validation set</span>
+                    validation_accuracies.append((k, acc))
+                </code></pre>
+                <p>By the end of this procedure, we could plot a graph that shows which values of <em>k</em> work best. We would then stick with this value and evaluate once on the actual test set.</p>
+                <blockquote>
+                    <p>Split your training set into training set and a validation set. Use validation set to tune all hyperparameters. At the end run a single time on the test set and report performance.</p>
+                </blockquote>
+                <h3 id="cross-validation"><strong>Cross-validation</strong>.</h3>
+                <p>In cases where the size of your training data (and therefore also the validation data) might be small, people sometimes use a more sophisticated technique for hyperparameter tuning called <strong>cross-validation</strong>. Working with our previous example, the idea is that instead of arbitrarily picking the first 1000 datapoints to be the validation set and rest training set, you can get a better and less noisy estimate of how well a certain value of <em>k</em> works by iterating over different validation sets and averaging the performance across these. For example, in 5-fold cross-validation, we would split the training data into 5 equal folds, use 4 of them for training, and 1 for validation. We would then iterate over which fold is the validation fold, evaluate the performance, and finally average the performance across the different folds.</p>
+                <div class="fig figleft fighighlight">
+                  <img src="assets/cvplot.png">
+                  <div class="figcaption">Example of a 5-fold cross-validation run for the parameter <b>k</b>. For each value of <b>k</b> we train on 4 folds and evaluate on the 5th. Hence, for each <b>k</b> we receive 5 accuracies on the validation fold (accuracy is the y-axis, each result is a point). The trend line is drawn through the average of the results for each <b>k</b> and the error bars indicate the standard deviation. Note that in this particular case, the cross-validation suggests that a value of about <b>k</b> = 7 works best on this particular dataset (corresponding to the peak in the plot). If we used more than 5 folds, we might expect to see a smoother (i.e. less noisy) curve.</div>
+                  <div style="clear:both"></div>
+              </div>
+
+
+              <p><strong>In practice</strong>. In practice, people prefer to avoid cross-validation in favor of having a single validation split, since cross-validation can be computationally expensive. The splits people tend to use is between 50%-90% of the training data for training and rest for validation. However, this depends on multiple factors: For example if the number of hyperparameters is large you may prefer to use bigger validation splits. If the number of examples in the validation set is small (perhaps only a few hundred or so), it is safer to use cross-validation. Typical number of folds you can see in practice would be 3-fold, 5-fold or 10-fold cross-validation.</p>
+              <div class="fig figcenter fighighlight">
+                  <img src="assets/crossval.jpeg">
+                  <div class="figcaption">Common data splits. A training and test set is given. The training set is split into folds (for example 5 folds here). The folds 1-4 become the training set. One fold (e.g. fold 5 here in yellow) is denoted as the Validation fold and is used to tune the hyperparameters. Cross-validation goes a step further and iterates over the choice of which fold is the validation fold, separately from 1-5. This would be referred to as 5-fold cross-validation. In the very end once the model is trained and all the best hyperparameters were determined, the model is evaluated a single time on the test data (red).</div>
+              </div>
+
+              <p><a name="procon"></a></p>
+              <h3 id="pros-and-cons-of-nearest-neighbor-classifier"><strong>Pros and Cons of Nearest Neighbor classifier.</strong></h3>
+              <p><strong>Pros</strong>:</p>
+              <ol>
+                <li>simple to implement and understand. </li>
+                <li>The classifier takes no time to train, since all that is required is to store and possibly index the training data. </li>
+            </ol>
+            <p><strong>Cons</strong>:</p>
+            <ol>
+                <li>We pay that computational cost at test time, since classifying a test example requires a comparison to every single training example. This is backwards, since in practice we often care about the test time efficiency much more than the efficiency at training time.</li>
+                <li>The Nearest Neighbor Classifier may sometimes be a good choice in some settings (especially if the data is low-dimensional), but it is rarely appropriate for use in practical image classification settings. One problem is that images are high-dimensional objects (i.e. they often contain many pixels), and distances over high-dimensional spaces can be very counter-intuitive.</li>
+            </ol>
+            <p><a name="summary"></a></p>
+            <h2 id="summary">Summary</h2>
+            <p>In summary:</p>
+            <ul>
+                <li>We introduced the problem of <strong>Image Classification</strong>, in which we are given a set of images that are all labeled with a single category. We are then asked to predict these categories for a novel set of test images and measure the accuracy of the predictions.</li>
+                <li>We introduced a simple classifier called the <strong>Nearest Neighbor classifier</strong>. We saw that there are multiple hyper-parameters (such as value of k, or the type of distance used to compare examples) that are associated with this classifier and that there was no obvious way of choosing them.</li>
+                <li>We saw that the correct way to set these hyperparameters is to split your training data into two: a training set and a fake test set, which we call <strong>validation set</strong>. We try different hyperparameter values and keep the values that lead to the best performance on the validation set.</li>
+                <li>If the lack of training data is a concern, we discussed a procedure called <strong>cross-validation</strong>, which can help reduce noise in estimating which hyperparameters work best.</li>
+                <li>Once the best hyperparameters are found, we fix them and perform a single <strong>evaluation</strong> on the actual test set.</li>
+                <li>We saw that Nearest Neighbor can get us about 40% accuracy on CIFAR-10. It is simple to implement but requires us to store the entire training set and it is expensive to evaluate on a test image.</li>
+                <li>Finally, we saw that the use of L1 or L2 distances on raw pixel values is not adequate since the distances correlate more strongly with backgrounds and color distributions of images than with their semantic content.</li>
+            </ul>
+            <p>In next lectures we will embark on addressing these challenges and eventually arrive at solutions that give 90% accuracies, allow us to completely discard the training set once learning is complete, and they will allow us to evaluate a test image in less than a millisecond.</p>
+            <p><a name="summaryapply"></a></p>
+            <h2 id="summary-applying-knn-in-practice">Summary: Applying kNN in practice</h2>
+            <p>If you wish to apply kNN in practice (hopefully not on images, or perhaps as only a baseline) proceed as follows:</p>
+            <ol>
+                <li>Preprocess your data: Normalize the features in your data (e.g. one pixel in images) to have zero mean and unit variance. We will cover this in more detail in later sections, and chose not to cover data normalization in this section because pixels in images are usually homogeneous and do not exhibit widely different distributions, alleviating the need for data normalization.</li>
+                <li>If your data is very high-dimensional, consider using a dimensionality reduction technique such as PCA (<a href="https://en.wikipedia.org/wiki/Principal_component_analysis" target="_blank">wiki ref</a>, <a href="http://cs229.stanford.edu/notes/cs229-notes10.pdf" target="_blank">CS229ref</a>, <a href="https://web.archive.org/web/20150503165118/http://www.bigdataexaminer.com:80/understanding-dimensionality-reduction-principal-component-analysis-and-singular-value-decomposition/" target="_blank">blog ref</a>), NCA (<a href="https://en.wikipedia.org/wiki/Neighbourhood_components_analysis" target="_blank">wiki ref</a>, <a href="https://kevinzakka.github.io/2020/02/10/nca/" target="_blank">blog ref</a>), or even <a href="https://scikit-learn.org/stable/modules/random_projection.html" target="_blank">Random Projections</a>.</li>
+                <li>Split your training data randomly into train/val splits. As a rule of thumb, between 70-90% of your data usually goes to the train split. This setting depends on how many hyperparameters you have and how much of an influence you expect them to have. If there are many hyperparameters to estimate, you should err on the side of having larger validation set to estimate them effectively. If you are concerned about the size of your validation data, it is best to split the training data into folds and perform cross-validation. If you can afford the computational budget it is always safer to go with cross-validation (the more folds the better, but more expensive).</li>
+                <li>Train and evaluate the kNN classifier on the validation data (for all folds, if doing cross-validation) for many choices of <strong>k</strong> (e.g. the more the better) and across different distance types (L1 and L2 are good candidates)</li>
+                <li>If your kNN classifier is running too long, consider using an Approximate Nearest Neighbor library (e.g. <a href="https://github.com/mariusmuja/flann" target="_blank">FLANN</a>) to accelerate the retrieval (at cost of some accuracy).</li>
+                <li>Take note of the hyperparameters that gave the best results. There is a question of whether you should use the full training set with the best hyperparameters, since the optimal hyperparameters might change if you were to fold the validation data into your training set (since the size of the data would be larger). In practice it is cleaner to not use the validation data in the final classifier and consider it to be <em>burned</em> on estimating the hyperparameters. Evaluate the best model on the test set. Report the test set accuracy and declare the result to be the performance of the kNN classifier on your data.</li>
+            </ol>
+            <p><a name="reading"></a></p>
+            <h2 id="further-reading">Further Reading</h2>
+            <p>Here are some (optional) links you may find interesting for further reading:</p>
+            <ul>
+                <li><p><a href="https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf" target="_blank">A Few Useful Things to Know about Machine Learning</a>, where especially section 6 is related but the whole paper is a warmly recommended reading.</p>
+                </li>
+                <li><p><a href="https://people.csail.mit.edu/torralba/shortCourseRLOC/index.html" target="_blank">Recognizing and Learning Object Categories</a>, a short course of object categorization at ICCV 2005.</p>
+                </li>
+            </ul>
+
+
+        </section>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+
+        </div>
+        <div class="no-results">
+
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+
+<a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: readme">
+    <i class="fa fa-angle-left"></i>
+</a>
+
+
+
+
+</div>
+
+<script>
+    var gitbook = gitbook || [];
+    gitbook.push(function() {
+        gitbook.page.hasChanged({"page":{"layout":"page","mathjax":true,"permalink":"/classification/","title":"Image Classification","level":"1.2","depth":1,"previous":{"title":"readme","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"classification.md","mtime":"2020-11-19T18:59:47.248Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-19T19:08:05.463Z"},"basePath":".","book":{"language":""}});
+    });
+</script>
+</div>
+
+
+<script src="gitbook/gitbook.js"></script>
+<script src="gitbook/theme.js"></script>
+
+
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+<script src="gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+
+
+
+<script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+
+
+
+<script src="gitbook/gitbook-plugin-search/search.js"></script>
+
+
+
+<script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+
+
+
+<script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+
+
+
+<script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+
+
+
+<script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="container">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Shengchen Liu</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+    <!-- All the links in the footer should remain intact. -->
+    <!-- You can delete the links only if you purchased the pro version. -->
+    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/ -->
+    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  </div>
+</div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="../assets/vendor/counterup/counterup.min.js"></script>
+<script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../assets/vendor/venobox/venobox.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="../assets/js/main.js"></script>
+
+
+</body>
+</html>
+
