@@ -1,4 +1,4 @@
-I"ç<header id = "header" class="fixed-top  d-flex justify-content-center align-items-center">
+I"·<header id = "header" class="fixed-top  d-flex justify-content-center align-items-center">
   <nav class="nav-menu d-none d-lg-block">
     <ul class="visible-links"><li class="masthead__menu-item">
           <a href="/#about">About</a>
@@ -8,6 +8,8 @@
           <a href="/#portfolio">Portfolio</a>
         </li><li class="masthead__menu-item">
           <a href="/#contact">Contact</a>
+        </li><li class="masthead__menu-item">
+          <a href="/notes/">Notes</a>
         </li><li class="masthead__menu-item">
           <a href="/sitemap/">Sitemap</a>
         </li></ul>

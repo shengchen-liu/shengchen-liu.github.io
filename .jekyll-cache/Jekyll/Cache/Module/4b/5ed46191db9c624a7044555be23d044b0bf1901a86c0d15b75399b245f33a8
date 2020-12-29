@@ -1,4 +1,4 @@
-I"Y
+I"µ
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -17,6 +17,8 @@
               <a href="/#portfolio">Portfolio</a>
             </li><li class="masthead__menu-item">
               <a href="/#contact">Contact</a>
+            </li><li class="masthead__menu-item">
+              <a href="/notes/">Notes</a>
             </li><li class="masthead__menu-item">
               <a href="/sitemap/">Sitemap</a>
             </li></ul>

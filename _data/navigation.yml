@@ -8,5 +8,7 @@ main:
     url: /#portfolio
   - title: "Contact"
     url: /#contact
+  - title: "Notes"
+    url: /notes/
   - title: "Sitemap"
     url: /sitemap/
