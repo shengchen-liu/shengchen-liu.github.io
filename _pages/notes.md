@@ -26,3 +26,8 @@ Learning notes of Stanford CS231n: Convolutional Neural Networks for Visual Reco
 <p>
 My learning notes of OMSCS Computer Vision.
 </p>
+
+<h2><a href="https://shengchen-liu.github.io/robotics_gitbook/">Robotics Notes</a></h2>
+<p>
+My learning notes of Robotics.
+</p>
