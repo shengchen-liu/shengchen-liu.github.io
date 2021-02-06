@@ -1,15 +1,4 @@
----
-title: "Edge Case: Nested and Mixed Lists"
-categories:
-  - Edge Case
-tags:
-  - content
-  - css
-  - edge case
-  - lists
-  - markup
----
-# Chapter 2: First Glance of Visual SLAM
+# Chapter 2. First Glance of Visual SLAM
 
 ## 1. What is Visual SLAM?
 

@@ -58,4 +58,10 @@ var store = [{
         "tags": [],
         "url": "https://shengchen-liu.github.io//welcome-to-jekyll/",
         "teaser": null
+      },{
+        "title": "Chapter2 First Glance Of Visual Slam",
+        "excerpt":"Chapter 2. First Glance of Visual SLAM 1. What is Visual SLAM? Using cameras to solve the localization and mapping problems. 2. Classic Visual SLAM Framework A typical visual SLAM work-flow includes the following steps: 2.1 Sensor data acquisition Acquisition and preprocessing for camera images. For mobile robot, this will...","categories": [],
+        "tags": [],
+        "url": "https://shengchen-liu.github.io//chapter2-first-glance-of-visual-SLAM/",
+        "teaser": null
       }]

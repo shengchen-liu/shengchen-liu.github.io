@@ -1,0 +1,44 @@
+I"Ò<h2 id="1-what-is-visual-slam">1. What is Visual SLAM?</h2>
+
+<p>Using cameras to solve the localization and mapping problems.</p>
+
+<h2 id="2-classic-visual-slam-framework">2. Classic Visual SLAM Framework</h2>
+
+<p><img src="https://shengchen-liu.github.io//_posts/_assets/images/image-alignment-580x300.jpg" alt="image-center" class="align-center" /></p>
+
+<p>A typical visual SLAM work-flow includes the following steps:</p>
+
+<h3 id="21-sensor-data-acquisition">2.1 Sensor data acquisition</h3>
+
+<p>Acquisition and preprocessing for camera images.  For mobile robot, this will also include the acquisition and synchronization with motor encoders, IMU sensors, etc.</p>
+
+<h3 id="22-visual-odometry-vo-front-end">2.2 Visual Odometry (VO) (Front End)</h3>
+
+<p>Estimate the camera movement between adjacent frames (ego-motion), as well as to generate a rough local map.</p>
+
+<h3 id="23-back-end-filters--optimization">2.3 Back End Filters / Optimization</h3>
+
+<p>The back end receives camera poses at different time stamps from VO, as well as results from loop closing, and apply optimization to generate a fully optimized trajectory and map.</p>
+
+<h3 id="24-loop-closing">2.4 Loop Closing</h3>
+
+<p>Determine whether the robot has returned to its previous position in order tor reduce the accumulated drift.  If a loop is detected, it will provide information to the back end for further optimization.</p>
+
+<h3 id="25-reconstruction">2.5 Reconstruction</h3>
+
+<p>Construct a task specific map based on the estimated camera trajectory.</p>
+
+<h2 id="3-mathematical-formulation-of-slam-problems">3. Mathematical Formulation of SLAM Problems</h2>
+
+<h3 id="31-motion-equation">3.1 Motion Equation</h3>
+
+\[x_k = f(x_{k-1}, u_k, w_k)\]
+
+<p>where \(u_k\) is the input orders, and \(w_k\) is noise.</p>
+
+<h3 id="32-observation-equation">3.2 Observation Equation</h3>
+
+\[z_{k, j} = h(y_j, x_k, v_{k,j})\]
+
+<p>where \(y_j\) is the landmark, \(x_k\) is the robotâ€™s position, \(v_{k,j}\) is the observation noise.</p>
+:ET

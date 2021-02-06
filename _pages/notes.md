@@ -31,3 +31,8 @@ My learning notes of OMSCS Computer Vision.
 <p>
 My learning notes of Robotics.
 </p>
+
+<h2><a href="https://shengchen-liu.github.io/gitbook_visual_slam/">Visual SLAM Notes</a></h2>
+<p>
+My learning notes of Visual SLAM..
+</p>

@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://shengchen-liu.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://shengchen-liu.github.io//" rel="alternate" type="text/html" /><updated>2020-12-29T17:43:47-05:00</updated><id>https://shengchen-liu.github.io//feed.xml</id><title type="html">Shenchen Liu’s website</title><subtitle>Shenchen Liu's website</subtitle><author><name>Shengchen Liu</name></author><entry><title type="html">My Example Post</title><link href="https://shengchen-liu.github.io//my-example-post/" rel="alternate" type="text/html" title="My Example Post" /><published>2016-05-20T00:00:00-04:00</published><updated>2016-05-20T00:00:00-04:00</updated><id>https://shengchen-liu.github.io//my-example-post</id><content type="html" xml:base="https://shengchen-liu.github.io//my-example-post/">&lt;p&gt;Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://shengchen-liu.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://shengchen-liu.github.io//" rel="alternate" type="text/html" /><updated>2021-02-06T13:36:11-05:00</updated><id>https://shengchen-liu.github.io//feed.xml</id><title type="html">Shenchen Liu’s website</title><subtitle>Shenchen Liu's website</subtitle><author><name>Shengchen Liu</name></author><entry><title type="html">Chapter2 First Glance Of Visual Slam</title><link href="https://shengchen-liu.github.io//chapter2-first-glance-of-visual-SLAM/" rel="alternate" type="text/html" title="Chapter2 First Glance Of Visual Slam" /><published>2021-02-01T00:00:00-05:00</published><updated>2021-02-01T00:00:00-05:00</updated><id>https://shengchen-liu.github.io//chapter2-first-glance-of-visual-SLAM</id><content type="html" xml:base="https://shengchen-liu.github.io//chapter2-first-glance-of-visual-SLAM/">&lt;h1 id=&quot;chapter-2-first-glance-of-visual-slam&quot;&gt;Chapter 2. First Glance of Visual SLAM&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-what-is-visual-slam&quot;&gt;1. What is Visual SLAM?&lt;/h2&gt;
+
+&lt;p&gt;Using cameras to solve the localization and mapping problems.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-classic-visual-slam-framework&quot;&gt;2. Classic Visual SLAM Framework&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/framework.png&quot; alt=&quot;image-20210201124819980&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A typical visual SLAM work-flow includes the following steps:&lt;/p&gt;
+
+&lt;h3 id=&quot;21-sensor-data-acquisition&quot;&gt;2.1 Sensor data acquisition&lt;/h3&gt;
+
+&lt;p&gt;Acquisition and preprocessing for camera images.  For mobile robot, this will also include the acquisition and synchronization with motor encoders, IMU sensors, etc.&lt;/p&gt;
+
+&lt;h3 id=&quot;22-visual-odometry-vo-front-end&quot;&gt;2.2 Visual Odometry (VO) (Front End)&lt;/h3&gt;
+
+&lt;p&gt;Estimate the camera movement between adjacent frames (ego-motion), as well as to generate a rough local map.&lt;/p&gt;
+
+&lt;h3 id=&quot;23-back-end-filters--optimization&quot;&gt;2.3 Back End Filters / Optimization&lt;/h3&gt;
+
+&lt;p&gt;The back end receives camera poses at different time stamps from VO, as well as results from loop closing, and apply optimization to generate a fully optimized trajectory and map.&lt;/p&gt;
+
+&lt;h3 id=&quot;24-loop-closing&quot;&gt;2.4 Loop Closing&lt;/h3&gt;
+
+&lt;p&gt;Determine whether the robot has returned to its previous position in order tor reduce the accumulated drift.  If a loop is detected, it will provide information to the back end for further optimization.&lt;/p&gt;
+
+&lt;h3 id=&quot;25-reconstruction&quot;&gt;2.5 Reconstruction&lt;/h3&gt;
+
+&lt;p&gt;Construct a task specific map based on the estimated camera trajectory.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-mathematical-formulation-of-slam-problems&quot;&gt;3. Mathematical Formulation of SLAM Problems&lt;/h2&gt;
+
+&lt;h3 id=&quot;31-motion-equation&quot;&gt;3.1 Motion Equation&lt;/h3&gt;
+
+\[x_k = f(x_{k-1}, u_k, w_k)\]
+
+&lt;p&gt;where \(u_k\) is the input orders, and \(w_k\) is noise.&lt;/p&gt;
+
+&lt;h3 id=&quot;32-observation-equation&quot;&gt;3.2 Observation Equation&lt;/h3&gt;
+
+\[z_{k, j} = h(y_j, x_k, v_{k,j})\]
+
+&lt;p&gt;where \(y_j\) is the landmark, \(x_k\) is the robot’s position, \(v_{k,j}\) is the observation noise.&lt;/p&gt;</content><author><name>Shengchen Liu</name></author><summary type="html">Chapter 2. First Glance of Visual SLAM</summary></entry><entry><title type="html">My Example Post</title><link href="https://shengchen-liu.github.io//my-example-post/" rel="alternate" type="text/html" title="My Example Post" /><published>2016-05-20T00:00:00-04:00</published><updated>2016-05-20T00:00:00-04:00</updated><id>https://shengchen-liu.github.io//my-example-post</id><content type="html" xml:base="https://shengchen-liu.github.io//my-example-post/">&lt;p&gt;Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.&lt;/p&gt;
 
 &lt;p&gt;No laudem altera adolescens has, volumus lucilius eum no. Eam ei nulla audiam efficiantur. Suas affert per no, ei tale nibh sea. Sea ne magna harum, in denique scriptorem sea, cetero alienum tibique ei eos. Labores persequeris referrentur eos ei.&lt;/p&gt;</content><author><name>Shengchen Liu</name></author><summary type="html">Eos eu docendi tractatos sapientem, brute option menandri in vix, quando vivendo accommodare te ius. Nec melius fastidii constituam id, viderer theophrastus ad sit, hinc semper periculis cum id. Noluisse postulant assentior est in, no choro sadipscing repudiandae vix. Vis in euismod delenit dignissim. Ex quod nostrum sit, suas decore animal id ius, nobis solet detracto quo te.</summary></entry><entry><title type="html">Some articles are just so long they deserve a really long title to see if things will break well</title><link href="https://shengchen-liu.github.io//misc/super-long-article/" rel="alternate" type="text/html" title="Some articles are just so long they deserve a really long title to see if things will break well" /><published>2016-05-20T00:00:00-04:00</published><updated>2016-05-20T00:00:00-04:00</updated><id>https://shengchen-liu.github.io//misc/super-long-article</id><content type="html" xml:base="https://shengchen-liu.github.io//misc/super-long-article/">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.&lt;/p&gt;
 
